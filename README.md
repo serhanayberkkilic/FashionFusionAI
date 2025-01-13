@@ -106,3 +106,5 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ## Contact
 For questions or feedback, please contact serhan ayberk kilic.
 
+## Acknowledgements
+Special thanks to Edanur, my lovely wife, for her unwavering support throughout this project.
