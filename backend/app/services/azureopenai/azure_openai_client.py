@@ -9,7 +9,7 @@ class AzureOpenAIClient:
             self.azure_openai_api_key = os.getenv("AZURE_OPENAI_API_KEY")
             self.azure_openai_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
             self.azure_openai_model = os.getenv("AZURE_OPENAI_MODEL")
-            self.azure_openai_model_upper = os.getenv("AZURE_OPENAI_MODEL_UPPER")
+
             self.azure_openai_api_version = os.getenv("AZURE_OPENAI_API_VERSION")
 
         except Exception as e:

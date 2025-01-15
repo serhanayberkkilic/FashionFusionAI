@@ -3,8 +3,8 @@ from starlette.middleware.cors import CORSMiddleware
 from fastapi.openapi.utils import get_openapi
 
 
-from app.api.v1.api import api_router as api_router_v1
-from app.core.config import settings as settings_value
+from .api.v1.api import api_router as api_router_v1
+from .core.config import settings as settings_value
 from fastapi.responses import RedirectResponse
 
 
@@ -16,7 +16,7 @@ def custom_openapi():
     if app.openapi_schema:
         return app.openapi_schema
     openapi_schema = get_openapi(
-        title=settings_value.project_name,
+        title=settings_value.project_display_name,
         version=settings_value.project_version,
         description=settings_value.project_description,
         routes=app.routes,
@@ -50,3 +50,4 @@ async def redirect_to_docs():
 
 # Router
 app.include_router(api_router_v1, prefix=settings_value.api_str + "/v1")
+

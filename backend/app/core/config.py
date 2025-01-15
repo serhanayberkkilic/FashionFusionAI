@@ -20,7 +20,7 @@ class Settings(BaseSettings):
     # "http://localhost:8080", "http://local.dockertoolbox.tiangolo.com"]'
     backend_cors_origins: List[AnyHttpUrl] = []
 
-    @field_validator("backend_cors_origins", pre=True)
+    @field_validator("backend_cors_origins")
     def assemble_cors_origins(cls, v: Union[str, List[str]]) -> Union[List[str], str]:
         if isinstance(v, str) and not v.startswith("["):
             return [i.strip() for i in v.split(",")]
